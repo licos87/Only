@@ -1,0 +1,5 @@
+@use 'mixins';
+
+@include mixins.font-import("PTSans", "PTSans-Regular", 400);
+@include mixins.font-import("PTSans", "PTSans-Bold", 700);
+@include mixins.font-import("Bebas Neue", "BebasNeue-Regular", 400);

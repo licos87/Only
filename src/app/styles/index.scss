@@ -1,0 +1,36 @@
+@use 'global/fonts' as *;
+@use 'global/utils' as *;
+@use 'global/variables' as *;
+@use 'global/reset' as *;
+
+:root {
+  --color-bg: #f4f5f9;
+  --color-text: #42567a;
+  --color-separator: rgba(66, 86, 122, 0.1);
+  --color-border: rgba(66, 86, 122, 0.5);
+
+
+  font-family: $font-family, Arial, sans-serif;
+  line-height: 1em;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: $color-text;
+  background-color: $color-bg;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #42567a;
+    --color-text: #e5e5e5;
+    --color-separator: rgba(244, 245, 249, 0.1);
+    --color-border: rgba(244, 245, 249, 0.5);
+  }
+}
+
+#root {
+  min-width: 320px;
+  max-width: 1440px;
+  margin-inline: auto;
+  text-align: center;
+}

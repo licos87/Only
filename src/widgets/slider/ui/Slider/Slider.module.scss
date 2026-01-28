@@ -1,0 +1,140 @@
+@use '@app/styles/global/mixins';
+@use '@app/styles/global/variables';
+
+:global(.swiper-slide) {
+  opacity: 0.4;
+}
+
+:global(.swiper-slide-active) {
+  opacity: 1;
+}
+
+@include mixins.breakpoint(variables.$tablet-width) {
+  :global(.swiper-slide) {
+    opacity: 1;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  overflow: hidden;
+
+  @include mixins.breakpoint(variables.$tablet-width) {
+    margin-top: 20px;
+    padding-inline: 80px;
+  }
+}
+
+.swiper {
+  padding-bottom: 100px;
+  padding-inline-start: 20px;
+
+  --swiper-theme-color: var(--color-text);
+  --swiper-pagination-bullet-size: 6px;
+
+  @include mixins.breakpoint(variables.$tablet-width) {
+    padding-inline: 0;
+  }
+}
+
+.slide {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.card {
+  width: clamp(166px, 25vw, 400px);
+  height: 100%;
+  text-wrap: balance;
+  text-align: start;
+}
+
+.year {
+  margin-bottom: 15px;
+  font-size: variables.$fz-s;
+  font-family: variables.$second-family;
+  font-weight: 400;
+  color: variables.$color-title;
+  background-color: transparent;
+
+  @include mixins.breakpoint(variables.$tablet-width) {
+    font-size: variables.$fz-m;
+  }
+
+  @include mixins.breakpoint(variables.$desktop-width) {
+    font-size: variables.$fz-l;
+  }
+}
+
+.description {
+  font-size: variables.$fz-xs;
+  line-height: 1.4;
+  color: variables.$color-text;
+  background-color: transparent;
+
+  @include mixins.breakpoint(variables.$tablet-width) {
+    font-size: variables.$fz-s;
+  }
+
+  @include mixins.breakpoint(variables.$desktop-width) {
+    font-size: variables.$fz-m;
+  }
+}
+
+.nav {
+  padding: 5px;
+  display: none;
+
+  @include mixins.breakpoint(variables.$desktop-width) {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 98%;
+    top: 15%;
+    left: 15px;
+  }
+  :global(.swiper-button-disabled) {
+    display: none;
+  }
+}
+
+.navBtn {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 1px solid gray;
+
+  &:hover {
+    box-shadow: 0 2px 4px rgba(66, 86, 122, 0.3);
+  }
+
+  &:active {
+    box-shadow: inset 0 2px 4px rgba(66, 86, 122, 0.3);
+  }
+
+  :disabled {
+    opacity: 0.4;
+  }
+}
+
+.navBtn .swiper-button-disabled {
+  opacity: .4;
+}
+
+.prev {
+  margin-inline-end: auto;
+}
+
+.prev svg {
+  transform: rotate(180deg);
+}
+
+.next {
+  margin-inline-start: auto;
+}

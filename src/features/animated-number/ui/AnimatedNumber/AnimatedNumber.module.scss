@@ -1,0 +1,19 @@
+@use '@app/styles/global/variables';
+@use '@app/styles/global/mixins';
+
+.number {
+  display: flex;
+  font-size: variables.$fz-xl;
+  color: variables.$color-title;
+  font-weight: variables.$fw-bold;
+  letter-spacing: variables.$tracking-s;
+  line-height: normal;
+
+  @include mixins.breakpoint(variables.$tablet-width) {
+    font-size: variables.$fz-xl * 2;
+  }
+
+  @include mixins.breakpoint(variables.$desktop-width) {
+    font-size: variables.$fz-xxl;
+  }
+}

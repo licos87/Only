@@ -1,0 +1,27 @@
+@mixin font-import($font-name, $file-name, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: $font-name;
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+    src: url("./fonts/#{$font-name}/#{$file-name}.woff2") format("woff2"),
+    url("./fonts/#{$font-name}/#{$file-name}.woff") format("woff");
+  }
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin reset-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin breakpoint($width) {
+  @media (width >= $width) {
+    @content;
+  }
+}
